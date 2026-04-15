@@ -4,7 +4,6 @@
 /* ============================================================
 1. HELPERS
 ============================================================ */
-emailjs.init("W5KSiPLeGAkSIH5Bl");
 const $ = (sel, ctx = document) => ctx.querySelector(sel);
 const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
@@ -291,13 +290,7 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
     try {
       // Simulación de envío (reemplazar con tu endpoint real)
-      await emailjs.send("service_eabqknh", "TU_TEMPLATE_ID", {
-        nombre: form.querySelector('[name="nombre"]').value,
-        empresa: form.querySelector('[name="empresa"]').value,
-        correo: form.querySelector('[name="correo"]').value,
-        telefono: form.querySelector('[name="telefono"]').value,
-        mensaje: form.querySelector('[name="mensaje"]').value
-      });
+      await new Promise(resolve => setTimeout(resolve, 1800));
 
       // Éxito
       notice.textContent = '¡Mensaje enviado! Nos pondremos en contacto pronto.';
