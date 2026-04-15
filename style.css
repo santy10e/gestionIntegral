@@ -630,8 +630,14 @@ section {
   inset: -1%;
   width: 100%;
   left: 45%;
-  background-image: url("img/hero_foto_v2.png");
-  background-size: cover;
+  overflow: hidden; /* IMPORTANTE */
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .hero-overlay {
