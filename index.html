@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Gestión Integral Cía. Ltda. — 14 años de experiencia en capacitación y consultoría empresarial. Seguridad laboral, salud ocupacional y certificación profesional en Ecuador." />
+  <meta name="keywords"
+    content="capacitación empresarial, consultoría, seguridad laboral, salud ocupacional, Ecuador, Ambato" />
+  <meta name="author" content="Gestión Integral Cía. Ltda." />
+  <meta property="og:title" content="Gestión Integral Cía. Ltda. | Capacitación y Consultoría" />
+  <meta property="og:description"
+    content="14 años transformando organizaciones con capacitación y consultoría empresarial de clase mundial." />
+  <meta property="og:type" content="website" />
+  <title>Gestión Integral Cía. Ltda. | Capacitación &amp; Consultoría Empresarial</title>
+
+  <!-- Google Fonts: Syne (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet" />
+
+  <!-- FIX: Lucide Icons — SIN defer, se carga sincrónicamente -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- LOADER -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <img src="/img/solo_logo_amarillo.png" alt="Logo">
+      </div>
+      <div class="loader-bar">
+        <div class="loader-progress" id="loaderProgress"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+      NAVEGACIÓN
+  ============================================================ -->
+  <header class="nav-header" id="navbar">
+    <nav class="nav-container">
+
+      <a href="#inicio" class="nav-logo" aria-label="Gestión Integral inicio">
+        <img src="img/solo_logo_letras_negro.png" alt="Gestión Integral" class="logo-img">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#quienes-somos" class="nav-link">Nosotros</a></li>
+        <li><a href="#servicios" class="nav-link">Servicios</a></li>
+        <li><a href="#capacitacion" class="nav-link">Capacitación</a></li>
+        <li><a href="#clientes" class="nav-link">Clientes</a></li>
+        <li>
+          <a href="#contacto" class="nav-cta">
+            Empezar ahora
+          </a>
+        </li>
+      </ul>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+    </nav>
+
+    <div class="nav-mobile" id="navMobile" aria-hidden="true">
+      <ul>
+        <li><a href="#quienes-somos">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#capacitacion">Capacitación</a></li>
+        <li><a href="#clientes">Clientes</a></li>
+        <li><a href="#contacto" class="mobile-cta">Empezar ahora</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+        HERO
+    ============================================================ -->
+    <section class="hero" id="inicio">
+
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-glow"></div>
+      <div class="hero-noise"></div>
+
+      <div class="container hero-content">
+        <div class="hero-grid">
+
+          <!-- LEFT -->
+          <div class="hero-left">
+
+            <h1 class="hero-title reveal">
+              Impulsa tu empresa con
+              <span class="dynamic-text" id="dynamicText">estrategias</span>
+            </h1>
+
+            <p class="hero-desc reveal">
+              Más de <strong>14 años en capacitación y consultoría empresarial</strong>.
+              Enfocado en temáticas <strong>vanguardistas y altos estándares de calidad</strong>.
+            </p>
+
+            <div class="hero-actions reveal">
+              <a href="#contacto" class="btn-primary">Empezar ahora</a>
+              <a href="#servicios" class="btn-ghost">Ver servicios</a>
+            </div>
+
+            <div class="hero-accreditation reveal">
+              <span class="accreditation-label">ACREDITADOS POR</span>
+              <div class="accreditation-logos">
+                <img src="img/logo_ministerio_Trabajo_v2.png" alt="Ministerio de Trabajo Ecuador">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+        QUIÉNES SOMOS
+    ============================================================ -->
+    <section class="about" id="quienes-somos">
+      <div class="container">
+        <div class="about-layout">
+
+          <div class="about-visual" data-aos>
+            <div class="about-img-frame">
+              <div class="about-image-wrapper">
+                <img src="img/quienes_somos.png" alt="Gestión Integral — Ambato, Ecuador" class="about-image" />
+                <div class="about-image-caption">
+                  Gestión Integral — Ambato, Ecuador
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-content" data-aos data-aos-delay="100">
+            <span class="section-tag">Nuestra historia</span>
+            <h2 class="section-title">Expertos que<br /><em>impulsan tu negocio</em></h2>
+            <p class="about-text">Somos una empresa con <strong>14 años de experiencia</strong> en capacitación y
+              consultoría empresarial con temáticas vanguardistas y los más altos estándares de calidad.</p>
+            <p class="about-text">Nuestros clientes avalan nuestro compromiso: <strong>Gestión Integral</strong> asegura
+              los mejores resultados para optimizar recursos y generar productividad en las organizaciones.</p>
+
+            <div class="about-pillars">
+              <div class="pillar">
+                <div class="pillar-icon">
+                  <i data-lucide="target"></i>
+                </div>
+                <div>
+                  <h4>Misión</h4>
+                  <p>Brindar servicios de excelencia que generen una contribución significativa en la competitividad de
+                    nuestros clientes.</p>
+                </div>
+              </div>
+              <div class="pillar">
+                <div class="pillar-icon pillar-icon--green">
+                  <i data-lucide="eye"></i>
+                </div>
+                <div>
+                  <h4>Visión</h4>
+                  <p>Ser empresa líder y referente en el mercado, cumpliendo valores empresariales con responsabilidad
+                    social.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-tags">
+              <span class="atag"><i data-lucide="check"></i> ISO Estándares</span>
+              <span class="atag"><i data-lucide="check"></i> Acreditación MRL</span>
+              <span class="atag"><i data-lucide="check"></i> Resultados medibles</span>
+              <span class="atag"><i data-lucide="check"></i> +100 empresas</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+        SERVICIOS
+    ============================================================ 
+    <section class="services" id="servicios" aria-labelledby="services-title">
+      <div class="services-bg" aria-hidden="true"></div>
+      <div class="container">
+
+        <div class="section-header reveal-up">
+          <span class="section-tag">Lo Que Hacemos</span>
+          <h2 class="section-title" id="services-title">Nuestros Servicios</h2>
+          <p class="section-desc">Soluciones integrales diseñadas para elevar el desempeño y la seguridad de su
+            organización.</p>
+        </div>
+
+        <div class="services-grid">
+
+          <article class="service-card reveal-up" style="--delay:0s">
+            <div class="service-card__icon">
+              <i data-lucide="graduation-cap"></i>
+            </div>
+            <h3 class="service-card__title">Servicios de Capacitación</h3>
+            <p class="service-card__desc">Programas formativos de alto impacto adaptados a cada sector, potenciando el
+              talento humano con metodologías de vanguardia.</p>
+            <a href="#capacitacion" class="service-card__link">
+              Ver más <i data-lucide="arrow-right"></i>
+            </a>
+          </article>
+
+          <article class="service-card reveal-up" style="--delay:.07s">
+            <div class="service-card__icon">
+              <i data-lucide="badge-check"></i>
+            </div>
+            <h3 class="service-card__title">Certificación Profesional</h3>
+            <p class="service-card__desc">Acreditación reconocida a nivel nacional que valida las competencias de sus
+              equipos con los más altos estándares del mercado.</p>
+            <a href="#contacto" class="service-card__link">
+              Ver más <i data-lucide="arrow-right"></i>
+            </a>
+          </article>
+
+          <article class="service-card reveal-up" style="--delay:.14s">
+            <div class="service-card__icon">
+              <i data-lucide="scan-eye"></i>
+            </div>
+            <h3 class="service-card__title">Medición de Riesgos Laborales</h3>
+            <p class="service-card__desc">Evaluación exhaustiva de factores de riesgo mecánico, físico, químico,
+              biológico, ergonómico y psicosocial.</p>
+            <a href="#capacitacion" class="service-card__link">
+              Ver más <i data-lucide="arrow-right"></i>
+            </a>
+          </article>
+
+          <article class="service-card reveal-up" style="--delay:.21s">
+            <div class="service-card__icon">
+              <i data-lucide="shield"></i>
+            </div>
+            <h3 class="service-card__title">Consultoría en Seguridad y Salud</h3>
+            <p class="service-card__desc">Asesoramiento estratégico para implementar sistemas de gestión que protejan a
+              sus colaboradores y cumplan la normativa vigente.</p>
+            <a href="#seguridad" class="service-card__link">
+              Ver más <i data-lucide="arrow-right"></i>
+            </a>
+          </article>
+
+          <article class="service-card reveal-up" style="--delay:.28s">
+            <div class="service-card__icon">
+              <i data-lucide="clipboard-check"></i>
+            </div>
+            <h3 class="service-card__title">Fiscalización de Seguridad</h3>
+            <p class="service-card__desc">Supervisión técnica y control de obras y procesos industriales, asegurando el
+              cumplimiento de normativas nacionales e internacionales.</p>
+            <a href="#seguridad" class="service-card__link">
+              Ver más <i data-lucide="arrow-right"></i>
+            </a>
+          </article>
+
+          <article class="service-card reveal-up" style="--delay:.35s">
+            <div class="service-card__icon">
+              <i data-lucide="leaf"></i>
+            </div>
+            <h3 class="service-card__title">Gestión Ambiental</h3>
+            <p class="service-card__desc">Planes de manejo ambiental, control de impactos y verificación de permisos
+              para una operación sostenible y responsable.</p>
+            <a href="#seguridad" class="service-card__link">
+              Ver más <i data-lucide="arrow-right"></i>
+            </a>
+          </article>
+
+          <article class="service-card service-card--wide reveal-up" style="--delay:.42s">
+            <div class="service-card__icon">
+              <i data-lucide="heart-pulse"></i>
+            </div>
+            <h3 class="service-card__title">Salud Ocupacional</h3>
+            <p class="service-card__desc">Programas integrales de bienestar laboral que incluyen reconocimientos
+              médicos, certificados de aptitud y campañas de prevención psicosocial.</p>
+            <a href="#seguridad" class="service-card__link">
+              Ver más <i data-lucide="arrow-right"></i>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!-- ============================================================
+         PROGRAMAS DE CAPACITACIÓN
+    ============================================================ -->
+    <section class="training" id="capacitacion" aria-labelledby="training-title">
+      <div class="container">
+
+        <div class="section-header reveal-up">
+          <span class="section-tag">Servicios</span>
+          <h2 class="section-title" id="training-title">Medición de riesgo laboral</h2>
+          <p class="section-desc">Evaluamos los seis factores de riesgo laboral con protocolos técnicos de precisión.
+          </p>
+        </div>
+
+        <div class="training-layout">
+          <div class="risk-grid">
+            <div class="risk-card reveal-up" style="--delay:0s">
+              <div class="risk-card__num">01</div>
+              <div class="risk-card__icon"><i data-lucide="cog"></i></div>
+              <h4>Riesgo Mecánico</h4>
+              <p>Evaluación de maquinaria, equipos y superficies de trabajo que pueden causar accidentes.</p>
+            </div>
+            <div class="risk-card reveal-up" style="--delay:.06s">
+              <div class="risk-card__num">02</div>
+              <div class="risk-card__icon"><i data-lucide="zap"></i></div>
+              <h4>Riesgo Físico</h4>
+              <p>Análisis de ruido, vibraciones, temperatura, iluminación y radiaciones en el entorno laboral.</p>
+            </div>
+            <div class="risk-card reveal-up" style="--delay:.12s">
+              <div class="risk-card__num">03</div>
+              <div class="risk-card__icon"><i data-lucide="flask-conical"></i></div>
+              <h4>Riesgo Químico</h4>
+              <p>Identificación y control de sustancias peligrosas, vapores, gases y polvos industriales.</p>
+            </div>
+            <div class="risk-card reveal-up" style="--delay:.18s">
+              <div class="risk-card__num">04</div>
+              <div class="risk-card__icon"><i data-lucide="microscope"></i></div>
+              <h4>Riesgo Biológico</h4>
+              <p>Protocolos frente a agentes infecciosos, bacterias, virus y exposición a material orgánico.</p>
+            </div>
+            <div class="risk-card reveal-up" style="--delay:.24s">
+              <div class="risk-card__num">05</div>
+              <div class="risk-card__icon"><i data-lucide="user-round"></i></div>
+              <h4>Riesgo Ergonómico</h4>
+              <p>Evaluación postural, movimientos repetitivos y condiciones de trabajo para prevenir lesiones.</p>
+            </div>
+            <div class="risk-card reveal-up" style="--delay:.30s">
+              <div class="risk-card__num">06</div>
+              <div class="risk-card__icon"><i data-lucide="brain"></i></div>
+              <h4>Riesgo Psicosocial</h4>
+              <p>Análisis de estrés laboral, burnout, clima organizacional y factores de bienestar mental.</p>
+            </div>
+          </div>
+
+          <div class="training-callout reveal-up" style="--delay:.2s">
+            <div class="training-callout__icon" aria-hidden="true">
+              <i data-lucide="sparkles"></i>
+            </div>
+            <h3>Programas Personalizados</h3>
+            <p>También diseñamos programas de capacitación <strong>a medida</strong> según las necesidades específicas
+              de cada organización, integrando diagnóstico, diseño curricular, facilitación y evaluación de impacto.</p>
+            <a href="#contacto" class="btn btn--primary btn--sm">Solicitar Propuesta</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+        SEGURIDAD Y SALUD — TABS
+    ============================================================ -->
+    <section class="safety" id="seguridad" aria-labelledby="safety-title">
+      <div class="safety-bg" aria-hidden="true"></div>
+      <div class="container">
+
+        <div class="section-header reveal-up">
+          <span class="section-tag">Asesoramiento externo</span>
+          <h2 class="section-title" id="safety-title">Seguridad , Salud &amp; Ambiente</h2>
+          <p class="section-desc">Gestión Integral Cía. Ltda. ofrece el servicio externalizado en
+            asesoría y soporte técnico en Seguridad, Salud y Ambiente, acorde al
+            requisito ministerial 196 MDT
+            2024 referente al registro, actualización y renovación en la plataforma SUT
+            del Ministerio de Trabajo.
+          </p>
+        </div>
+
+        <div class="tabs reveal-up" role="tablist" aria-label="Áreas de seguridad">
+          <button class="tab-btn tab-btn--active" role="tab" aria-selected="true" aria-controls="tab-seguridad"
+            data-tab="seguridad">
+            <i data-lucide="hard-hat"></i> Seguridad
+          </button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-gestion" data-tab="gestion">
+            <i data-lucide="settings-2"></i> Gestión
+          </button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-ambiente" data-tab="ambiente">
+            <i data-lucide="trees"></i> Ambiente
+          </button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-salud" data-tab="salud">
+            <i data-lucide="stethoscope"></i> Salud
+          </button>
+        </div>
+
+        <div class="tab-panels">
+
+          <div class="tab-panel tab-panel--active" id="tab-seguridad" role="tabpanel">
+            <div class="tab-panel__header">
+              <div class="tab-panel__icon"><i data-lucide="hard-hat"></i></div>
+              <div>
+                <h3>Seguridad en el Trabajo</h3>
+                <p>Control integral de procesos y entornos de alto riesgo.</p>
+              </div>
+            </div>
+            <ul class="checklist" role="list">
+              <li><i data-lucide="check-circle-2"></i> Revisión y aprobación del plan de seguridad y salud del proyecto
+              </li>
+              <li><i data-lucide="check-circle-2"></i> Análisis de riesgos y medidas de prevención</li>
+              <li><i data-lucide="check-circle-2"></i> Seguimiento de medidas de control para minimizar riesgos</li>
+              <li><i data-lucide="check-circle-2"></i> Inspecciones puntuales durante la ejecución de trabajos de alto
+                riesgo</li>
+              <li><i data-lucide="check-circle-2"></i> Inspecciones periódicas</li>
+              <li><i data-lucide="check-circle-2"></i> Planificación de ejecución de los trabajos</li>
+              <li><i data-lucide="check-circle-2"></i> Coordinación de actividades de obra</li>
+              <li><i data-lucide="check-circle-2"></i> Control de acceso a obra</li>
+              <li><i data-lucide="check-circle-2"></i> Informe mensual (actas de visitas, incidentes, etc.)</li>
+              <li><i data-lucide="check-circle-2"></i> Seguimiento del libro de obra</li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" id="tab-gestion" role="tabpanel" hidden>
+            <div class="tab-panel__header">
+              <div class="tab-panel__icon"><i data-lucide="settings-2"></i></div>
+              <div>
+                <h3>Gestión y Control</h3>
+                <p>Sistemas de gestión y comunicación para procesos seguros.</p>
+              </div>
+            </div>
+            <ul class="checklist" role="list">
+              <li><i data-lucide="check-circle-2"></i> Verificación de liberación de máquinas, equipos, herramientas,
+                etc.</li>
+              <li><i data-lucide="check-circle-2"></i> Comprobar y exigir el cumplimiento del sistema de permisos de
+                trabajo</li>
+              <li><i data-lucide="check-circle-2"></i> Control, aprobación y/o recomendación de productos químicos</li>
+              <li><i data-lucide="check-circle-2"></i> Análisis del sistema de gestión</li>
+              <li><i data-lucide="check-circle-2"></i> Planes integrales de acción en cronogramas, recursos, normativas
+              </li>
+              <li><i data-lucide="check-circle-2"></i> Comunicación con clientes y subcontratistas con reuniones
+                periódicas</li>
+              <li><i data-lucide="check-circle-2"></i> Seguimiento de desempeño del equipo de Seguridad
+                y Salud Ocupacional</li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" id="tab-ambiente" role="tabpanel" hidden>
+            <div class="tab-panel__header">
+              <div class="tab-panel__icon"><i data-lucide="trees"></i></div>
+              <div>
+                <h3>Ambiente</h3>
+                <p>Gestión responsable del impacto ambiental de las operaciones.</p>
+              </div>
+            </div>
+            <ul class="checklist" role="list">
+              <li><i data-lucide="check-circle-2"></i> Seguimiento del plan de manejo ambiental</li>
+              <li><i data-lucide="check-circle-2"></i> Aprobación del certificado ambiental</li>
+              <li><i data-lucide="check-circle-2"></i> Verificación de disposición de residuos</li>
+              <li><i data-lucide="check-circle-2"></i> Revisión de planes, permisos y procedimientos ambientales</li>
+              <li><i data-lucide="check-circle-2"></i> Comprobar y exigir el cumplimiento de las medidas para minimizar
+                y controlar los aspectos e impactos ambientales</li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" id="tab-salud" role="tabpanel" hidden>
+            <div class="tab-panel__header">
+              <div class="tab-panel__icon"><i data-lucide="stethoscope"></i></div>
+              <div>
+                <h3>Salud Ocupacional</h3>
+                <p>Bienestar integral del talento humano como ventaja competitiva.</p>
+              </div>
+            </div>
+            <ul class="checklist" role="list">
+              <li><i data-lucide="check-circle-2"></i> Certificación del programa Actívate y Vive</li>
+              <li><i data-lucide="check-circle-2"></i> Reconocimientos médicos</li>
+              <li><i data-lucide="check-circle-2"></i> Certificados de aptitud médica</li>
+              <li><i data-lucide="check-circle-2"></i> Pausas activas</li>
+              <li><i data-lucide="check-circle-2"></i> Control y gestión de botiquines de primeros auxilios</li>
+              <li><i data-lucide="check-circle-2"></i> Campañas específicas de salud</li>
+              <li><i data-lucide="check-circle-2"></i> Inspección de puestos de trabajo</li>
+              <li><i data-lucide="check-circle-2"></i> Programas de prevención psicosocial, drogas y VIH</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+        CLIENTES
+    ============================================================ -->
+    <section class="clients" id="clientes" aria-labelledby="clients-title">
+      <div class="container">
+
+        <div class="section-header reveal-up">
+          <span class="section-tag">Confianza</span>
+          <h2 class="section-title" id="clients-title">Empresas que Confían en Nosotros</h2>
+          <p class="section-desc">Más de 100 organizaciones han transformado sus procesos con Gestión Integral.</p>
+        </div>
+
+        <div class="carousel-track-wrapper reveal-up" aria-label="Logotipos de clientes" aria-live="off">
+          <div class="carousel-track" id="carouselTrack">
+            <div class="client-logo"><img src="/logos/adelca.webp" alt="Empresa A"></div>
+            <div class="client-logo"><img src="/logos/andes-petroleum.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/asenq.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/azende.png" alt="Empresa B"></div>
+            <div class="client-logo"><img src="/logos/banco_del_pacifico.png" alt="Empresa C"></div>
+            <div class="client-logo"><img src="/logos/cafe_minerma.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/biess.png" alt="Empresa D"></div>
+            <div class="client-logo"><img src="/logos/capeipi.png" alt="Empresa E"></div>
+            <div class="client-logo"><img src="/logos/capit.png" alt="Empresa F"></div>
+            <div class="client-logo"><img src="/logos/cislatam.png" alt="Empresa G"></div>
+            <div class="client-logo"><img src="/logos/COAC-El-Sagrario.png" alt="Empresa H"></div>
+            <div class="client-logo"><img src="/logos/coheco.png" alt="Empresa I"></div>
+            <div class="client-logo"><img src="/logos/colombina.png" alt="Empresa J"></div>
+            <div class="client-logo"><img src="/logos/construlec.png" alt="Empresa K"></div>
+            <div class="client-logo"><img src="/logos/continental.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/ecuamatriz.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/el bosque.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/eni.png" alt="Empresa L"></div>
+            <div class="client-logo"><img src="/logos/five.png" alt="Empresa M"></div>
+            <div class="client-logo"><img src="/logos/gptungurahua.png" alt="Empresa N"></div>
+            <div class="client-logo"><img src="/logos/holcim.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/images.webp" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/laboratorios-biopas.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/leones.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/Lipesa.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/martinizing.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/mercado ambato.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/metro.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/molinaro.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/muni_pelileo.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/plasticaucho.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/pretoecuador.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/registro de la propiedad de ibarra.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/repsol.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/rosaprima.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/sek.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/sunstone metals.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/telpronet.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/terminal_guay.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/yanbal.png" alt="Empresa O"></div>
+            <div class="client-logo"><img src="/logos/zambrano.png" alt="Empresa O"></div>
+          </div>
+        </div>
+
+        <div class="testimonials-bento reveal-up">
+
+          <article class="testimonial testimonial--featured">
+            <div class="testimonial__quote" aria-hidden="true">"</div>
+            <blockquote>
+              <p>Gestión Integral transformó por completo nuestra cultura de seguridad. Los resultados fueron visibles
+                desde el primer mes: cero accidentes y un equipo mucho más comprometido.</p>
+            </blockquote>
+            <footer class="testimonial__author">
+              <div class="author-avatar" aria-hidden="true">RM</div>
+              <div>
+                <strong>Ricardo Morales</strong>
+                <span>Gerente de Operaciones · Industria Metalmecánica</span>
+              </div>
+            </footer>
+            <div class="testimonial__stars" aria-label="5 de 5 estrellas">
+              <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+              <i data-lucide="star"></i><i data-lucide="star"></i>
+            </div>
+          </article>
+
+          <article class="testimonial">
+            <blockquote>
+              <p>La capacitación en riesgos psicosociales fue reveladora. Ahora tenemos herramientas concretas para
+                apoyar a nuestro personal.</p>
+            </blockquote>
+            <footer class="testimonial__author">
+              <div class="author-avatar" aria-hidden="true">AL</div>
+              <div>
+                <strong>Andrea López</strong>
+                <span>RRHH · Empresa Distribuidora</span>
+              </div>
+            </footer>
+            <div class="testimonial__stars" aria-label="5 de 5 estrellas">
+              <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+              <i data-lucide="star"></i><i data-lucide="star"></i>
+            </div>
+          </article>
+
+          <article class="testimonial">
+            <blockquote>
+              <p>Su equipo de consultores es altamente profesional. Nos ayudaron a obtener la certificación en tiempo
+                récord.</p>
+            </blockquote>
+            <footer class="testimonial__author">
+              <div class="author-avatar" aria-hidden="true">JP</div>
+              <div>
+                <strong>Juan Páez</strong>
+                <span>Director · Constructora Andina</span>
+              </div>
+            </footer>
+            <div class="testimonial__stars" aria-label="5 de 5 estrellas">
+              <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+              <i data-lucide="star"></i><i data-lucide="star"></i>
+            </div>
+          </article>
+
+          <article class="testimonial testimonial--accent">
+            <div class="testimonial__metric">
+              <span class="metric-num">100%</span>
+              <span class="metric-label">de empresas recomendarían nuestros servicios</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+    <!-- ============================================================
+        GALERÍA
+    ============================================================ -->
+
+    <section class="gallery">
+      <div class="container">
+
+        <h2 class="section-title">Galería</h2>
+
+        <div class="gallery-grid">
+
+          <!-- Imagen -->
+          <div class="gallery-item">
+            <img src="/media/img1.jpg" alt="Proyecto 1">
+          </div>
+
+          <!-- Video -->
+          <div class="gallery-item video">
+            <video src="/media/video1.mp4" muted loop playsinline></video>
+          </div>
+
+          <div class="gallery-item">
+            <img src="/media/img2.jpg" alt="Proyecto 2">
+          </div>
+
+          <div class="gallery-item video">
+            <video src="/media/video2.mp4" muted loop playsinline></video>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+        CONTACTO
+    ============================================================ -->
+    <section class="contact" id="contacto" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+
+        <div class="contact-info reveal-up">
+          <span class="section-tag">Hablemos</span>
+          <h2 class="section-title" id="contact-title">Trabajemos Juntos</h2>
+          <p class="contact-info__desc">Estamos listos para ayudar a su organización a alcanzar nuevos niveles de
+            excelencia. Escríbanos o llámenos.</p>
+
+          <ul class="contact-details" role="list">
+            <li>
+              <div class="contact-details__icon"><i data-lucide="phone"></i></div>
+              <div>
+                <span class="contact-details__label">Teléfonos</span>
+                <a href="tel:+593980884979" class="contact-details__value">0980 884 979</a>
+                <a href="tel:+593992565242" class="contact-details__value">0992 565 242</a>
+              </div>
+            </li>
+            <li>
+              <div class="contact-details__icon"><i data-lucide="map-pin"></i></div>
+              <div>
+                <span class="contact-details__label">Dirección</span>
+                <span class="contact-details__value">Marcos Montalvo e Isaías Sánchez<br />Ambato, Ecuador</span>
+              </div>
+            </li>
+            <li>
+              <div class="contact-details__icon"><i data-lucide="mail"></i></div>
+              <div>
+                <span class="contact-details__label">Correo</span>
+                <a href="mailto:info@gestionintegral.com.ec"
+                  class="contact-details__value">info@gestionintegral.com.ec</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-form-wrapper reveal-up" style="--delay:.15s">
+          <form class="contact-form" id="contactForm" novalidate aria-label="Formulario de contacto">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre completo <span aria-hidden="true">*</span></label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej. María García" required
+                  autocomplete="name" />
+                <span class="form-error" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <label for="empresa">Empresa</label>
+                <input type="text" id="empresa" name="empresa" placeholder="Ej. Industrias XYZ"
+                  autocomplete="organization" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="correo">Correo electrónico <span aria-hidden="true">*</span></label>
+                <input type="email" id="correo" name="correo" placeholder="correo@empresa.com" required
+                  autocomplete="email" />
+                <span class="form-error" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="09XX XXX XXX" autocomplete="tel" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="mensaje">Mensaje <span aria-hidden="true">*</span></label>
+              <textarea id="mensaje" name="mensaje" rows="5"
+                placeholder="Cuéntenos sobre su organización y cómo podemos ayudarle..." required></textarea>
+              <span class="form-error" role="alert" aria-live="polite"></span>
+            </div>
+            <!-- FIX: btn--loading no deshabilitaba el botón -->
+            <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+              <i data-lucide="send"></i>
+              <span>Enviar Mensaje</span>
+              <div class="btn-loader" aria-hidden="true"></div>
+            </button>
+            <p class="form-notice" id="formNotice" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="map-wrapper reveal-up">
+        <iframe title="Ubicación de Gestión Integral en Ambato, Ecuador"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.2999!2d-78.6234!3d-1.2490!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTQnNTYuNCJTIDc4wrAzNyc0NC40Ilc!5e0!3m2!1ses!2sec!4v1234567890"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+      FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <a href="#inicio" class="nav-logo footer-logo" aria-label="Gestión Integral">
+          <span class="logo-mark">GI</span>
+          <span class="logo-text">Gestión <strong>Integral</strong></span>
+        </a>
+        <p class="footer-brand__desc">14 años transformando organizaciones con capacitación y consultoría empresarial de
+          clase mundial.</p>
+        <div class="footer-social" aria-label="Redes sociales">
+          <a href="#" class="social-link" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" class="social-link" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+        </div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Enlaces rápidos">
+        <h4>Enlaces Rápidos</h4>
+        <ul role="list">
+          <li><a href="#quienes-somos">Quiénes Somos</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#capacitacion">Capacitación</a></li>
+          <li><a href="#seguridad">Seguridad &amp; Salud</a></li>
+          <li><a href="#clientes">Clientes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav" aria-label="Servicios principales">
+        <h4>Servicios</h4>
+        <ul role="list">
+          <li><a href="#servicios">Servicios de Capacitación</a></li>
+          <li><a href="#servicios">Certificación Profesional</a></li>
+          <li><a href="#servicios">Medición de Riesgos</a></li>
+          <li><a href="#servicios">Consultoría en SST</a></li>
+          <li><a href="#servicios">Fiscalización</a></li>
+          <li><a href="#servicios">Gestión Ambiental</a></li>
+        </ul>
+      </nav>
+
+      <address class="footer-contact" aria-label="Información de contacto">
+        <h4>Contacto</h4>
+        <ul role="list">
+          <li><i data-lucide="map-pin"></i> Marcos Montalvo e Isaías Sánchez, Ambato</li>
+          <li><i data-lucide="phone"></i><a href="tel:+593980884979">0980 884 979</a></li>
+          <li><i data-lucide="phone"></i><a href="tel:+593992565242">0992 565 242</a></li>
+          <li><i data-lucide="mail"></i><a href="mailto:info@gestionintegral.com.ec">info@gestionintegral.com.ec</a>
+          </li>
+        </ul>
+      </address>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom__inner">
+        <p>&copy; <span id="currentYear"></span> Gestión Integral Cía. Ltda. Todos los derechos reservados.</p>
+        <p>Ambato, Ecuador · RUC: 1891XXXXXXXX001</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp floating button -->
+  <a href="https://wa.me/593980884979?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios"
+    class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contáctanos por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+    </svg>
+    <span class="whatsapp-tooltip">¡Escríbenos!</span>
+  </a>
+
+  <script src="script.js"></script>
+
+  <!-- FIX CRÍTICO: Inicializar Lucide DESPUÉS de que el DOM esté listo -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      lucide.createIcons();
+    });
+  </script>
+
+</body>
+
+</html>

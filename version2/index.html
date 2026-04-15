@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gestión Integral Cía. Ltda. — 14 años de experiencia en capacitación y consultoría empresarial. Seguridad laboral, salud ocupacional y certificación profesional en Ecuador." />
+  <title>Gestión Integral | Capacitación & Consultoría Empresarial</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CURSOR PERSONALIZADO -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- LOADER -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-inner">
+      <div class="loader-logo">GI</div>
+      <div class="loader-bar"><div class="loader-progress" id="loaderProgress"></div></div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#inicio" class="nav-brand">
+        <img src="img/logo_sin_fondo_v3.png" alt="Gestión Integral" class="nav-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <span class="nav-logo-fallback">
+          <span class="nav-logo-mark">GI</span>
+          <span class="nav-logo-text">Gestión<strong>Integral</strong></span>
+        </span>
+      </a>
+
+      <nav class="nav-links" role="navigation">
+        <a href="#quienes-somos" class="nav-link">Nosotros</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#capacitacion" class="nav-link">Capacitación</a>
+        <a href="#propuesta" class="nav-link">Planes</a>
+        <a href="#clientes" class="nav-link">Clientes</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contacto" class="nav-cta">
+          <span>Empezar ahora</span>
+          <i data-lucide="arrow-right"></i>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menú" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <nav class="mobile-nav">
+      <a href="#quienes-somos" class="mobile-link">Nosotros</a>
+      <a href="#servicios" class="mobile-link">Servicios</a>
+      <a href="#capacitacion" class="mobile-link">Capacitación</a>
+      <a href="#propuesta" class="mobile-link">Planes</a>
+      <a href="#clientes" class="mobile-link">Clientes</a>
+      <a href="#contacto" class="mobile-link mobile-link--cta">Empezar ahora</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         HERO — EFECTO WOW
+    ============================================================ -->
+    <section class="hero" id="inicio">
+      <div class="hero-bg-mesh"></div>
+      <div class="hero-orb hero-orb--1"></div>
+      <div class="hero-orb hero-orb--2"></div>
+      <div class="hero-orb hero-orb--3"></div>
+      <div class="hero-grid-overlay"></div>
+
+      <div class="hero-container">
+        <div class="hero-left">
+
+          <div class="hero-badge" data-aos>
+            <span class="badge-pulse"></span>
+            <span>Acreditado · Ministerio del Trabajo Ecuador</span>
+          </div>
+
+          <h1 class="hero-title" data-aos data-aos-delay="100">
+            <span class="hero-title-line">Transforma tu</span>
+            <span class="hero-title-line hero-title-line--accent">
+              <em>empresa</em> con
+            </span>
+            <span class="hero-title-line hero-title-word-swap">
+              <span class="word-swap" id="wordSwap">estrategia</span>
+            </span>
+          </h1>
+
+          <p class="hero-desc" data-aos data-aos-delay="200">
+            Más de <strong>14 años</strong> impulsando organizaciones en Ecuador con capacitación de clase mundial, consultoría especializada y certificación profesional reconocida.
+          </p>
+
+          <div class="hero-actions" data-aos data-aos-delay="300">
+            <a href="#contacto" class="btn-hero-primary">
+              <span>Solicitar propuesta</span>
+              <div class="btn-icon"><i data-lucide="arrow-right"></i></div>
+            </a>
+            <a href="#servicios" class="btn-hero-ghost">
+              <i data-lucide="play-circle"></i>
+              <span>Ver servicios</span>
+            </a>
+          </div>
+
+          <div class="hero-trust" data-aos data-aos-delay="400">
+            <div class="trust-avatars">
+              <div class="trust-avatar" style="background: linear-gradient(135deg,#004A89,#01485B)">RM</div>
+              <div class="trust-avatar" style="background: linear-gradient(135deg,#F4BE1F,#d6a400)">AL</div>
+              <div class="trust-avatar" style="background: linear-gradient(135deg,#01485B,#004A89)">JP</div>
+              <div class="trust-avatar trust-avatar--more">+97</div>
+            </div>
+            <div class="trust-text">
+              <strong>100+ empresas</strong> confían en nosotros
+            </div>
+          </div>
+
+        </div>
+
+        <div class="hero-right" data-aos data-aos-delay="150">
+          <div class="hero-card-stack">
+
+            <div class="hcard hcard--main">
+              <div class="hcard-header">
+                <div class="hcard-icon"><i data-lucide="shield-check"></i></div>
+                <div class="hcard-meta">
+                  <span class="hcard-label">Certificación activa</span>
+                  <span class="hcard-value">ISO & Ministerio</span>
+                </div>
+                <div class="hcard-status"></div>
+              </div>
+              <div class="hcard-stats">
+                <div class="hcard-stat">
+                  <span class="hcard-num" data-count="14">0</span>
+                  <span class="hcard-unit">años</span>
+                </div>
+                <div class="hcard-divider"></div>
+                <div class="hcard-stat">
+                  <span class="hcard-num" data-count="500">0</span>
+                  <span class="hcard-unit">programas</span>
+                </div>
+                <div class="hcard-divider"></div>
+                <div class="hcard-stat">
+                  <span class="hcard-num" data-count="100">0</span>
+                  <span class="hcard-unit">+ clientes</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hcard hcard--float hcard--float-1">
+              <i data-lucide="trending-up"></i>
+              <div>
+                <div class="hcard-float-num">+38%</div>
+                <div class="hcard-float-txt">productividad</div>
+              </div>
+            </div>
+
+            <div class="hcard hcard--float hcard--float-2">
+              <i data-lucide="award"></i>
+              <div>
+                <div class="hcard-float-num">0</div>
+                <div class="hcard-float-txt">accidentes post-cap.</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- CLIENTS MARQUEE -->
+      <div class="hero-marquee" data-aos data-aos-delay="500">
+        <span class="marquee-label">Confían en nosotros</span>
+        <div class="marquee-wrapper">
+          <div class="marquee-track" id="marqueeTrack">
+            <div class="marquee-row" id="marqueeRow">
+              <span class="marquee-item">Colombina</span>
+              <span class="marquee-dot">·</span>
+              <span class="marquee-item">Constructora Andina</span>
+              <span class="marquee-dot">·</span>
+              <span class="marquee-item">Industrias Metalmecánicas</span>
+              <span class="marquee-dot">·</span>
+              <span class="marquee-item">Empresa Distribuidora</span>
+              <span class="marquee-dot">·</span>
+              <span class="marquee-item">Grupo Industrial EC</span>
+              <span class="marquee-dot">·</span>
+              <span class="marquee-item">Textiles del Centro</span>
+              <span class="marquee-dot">·</span>
+              <span class="marquee-item">Pharmabrand</span>
+              <span class="marquee-dot">·</span>
+              <span class="marquee-item">Agropecuaria Sur</span>
+              <span class="marquee-dot">·</span>
+            </div>
+            <div class="marquee-row" aria-hidden="true">
+              <span class="marquee-item">Colombina</span>
+              <span class="marquee-dot">·</span>
+              <span class="marquee-item">Constructora Andina</span>
+              <span class="marquee-dot">·</span>
+              <span class="marquee-item">Industrias Metalmecánicas</span>
+              <span class="marquee-dot">·</span>
+              <span class="marquee-item">Empresa Distribuidora</span>
+              <span class="marquee-dot">·</span>
+              <span class="marquee-item">Grupo Industrial EC</span>
+              <span class="marquee-dot">·</span>
+              <span class="marquee-item">Textiles del Centro</span>
+              <span class="marquee-dot">·</span>
+              <span class="marquee-item">Pharmabrand</span>
+              <span class="marquee-dot">·</span>
+              <span class="marquee-item">Agropecuaria Sur</span>
+              <span class="marquee-dot">·</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROPUESTA DE VALOR — BENTO GRID
+    ============================================================ -->
+    <section class="value-section" id="valor">
+      <div class="container">
+        <div class="value-bento">
+
+          <div class="vbento vbento--headline" data-aos>
+            <span class="section-chip">Por qué elegirnos</span>
+            <h2 class="vbento-title">La diferencia<br/><em>está en los resultados</em></h2>
+          </div>
+
+          <div class="vbento vbento--stat" data-aos data-aos-delay="50">
+            <div class="vstat-num" data-count="98">0</div>
+            <div class="vstat-pct">%</div>
+            <p>de satisfacción en evaluaciones post-capacitación</p>
+          </div>
+
+          <div class="vbento vbento--feature" data-aos data-aos-delay="100">
+            <div class="vfeat-icon"><i data-lucide="zap"></i></div>
+            <h3>Metodología ágil</h3>
+            <p>Diagnóstico, diseño, facilitación y medición de impacto en ciclos cortos y efectivos.</p>
+          </div>
+
+          <div class="vbento vbento--image" data-aos data-aos-delay="80">
+            <div class="vbento-img-placeholder">
+              <div class="vbento-img-content">
+                <i data-lucide="users"></i>
+                <span>Equipo experto</span>
+              </div>
+            </div>
+            <div class="vbento-img-badge">
+              <i data-lucide="check-circle"></i>
+              <span>Acreditados MRL</span>
+            </div>
+          </div>
+
+          <div class="vbento vbento--stat vbento--stat-2" data-aos data-aos-delay="120">
+            <div class="vstat-num" data-count="14">0</div>
+            <div class="vstat-pct">+</div>
+            <p>años de experiencia ininterrumpida en Ecuador</p>
+          </div>
+
+          <div class="vbento vbento--feature vbento--feature-2" data-aos data-aos-delay="140">
+            <div class="vfeat-icon"><i data-lucide="shield"></i></div>
+            <h3>Cumplimiento normativo</h3>
+            <p>Alineado con IESS, Ministerio del Trabajo y estándares ISO para su tranquilidad legal.</p>
+          </div>
+
+          <div class="vbento vbento--quote" data-aos data-aos-delay="160">
+            <div class="vquote-icon"><i data-lucide="quote"></i></div>
+            <p>"Gestión Integral transformó nuestra cultura de seguridad en tiempo récord."</p>
+            <cite>— Ricardo Morales, Gerente Operaciones</cite>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         QUIÉNES SOMOS
+    ============================================================ -->
+    <section class="about" id="quienes-somos">
+      <div class="container">
+        <div class="about-layout">
+
+          <div class="about-visual" data-aos>
+            <div class="about-img-frame">
+              <div class="about-img-placeholder">
+                <i data-lucide="building-2"></i>
+                <span>Gestión Integral — Ambato, Ecuador</span>
+              </div>
+              <div class="about-float-card">
+                <div class="afc-icon"><i data-lucide="award"></i></div>
+                <div>
+                  <div class="afc-title">14 años de excelencia</div>
+                  <div class="afc-sub">Líderes en capacitación empresarial</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-content" data-aos data-aos-delay="100">
+            <span class="section-chip">Nuestra historia</span>
+            <h2 class="section-title">Expertos que<br/><em>impulsan tu negocio</em></h2>
+            <p class="about-text">Somos una empresa con <strong>14 años de experiencia</strong> en capacitación y consultoría empresarial con temáticas vanguardistas y los más altos estándares de calidad.</p>
+            <p class="about-text">Nuestros clientes avalan nuestro compromiso: <strong>Gestión Integral</strong> asegura los mejores resultados para optimizar recursos y generar productividad en las organizaciones.</p>
+
+            <div class="about-pillars">
+              <div class="pillar">
+                <div class="pillar-icon"><i data-lucide="target"></i></div>
+                <div>
+                  <h4>Misión</h4>
+                  <p>Brindar servicios de excelencia que generen una contribución significativa en la competitividad de nuestros clientes.</p>
+                </div>
+              </div>
+              <div class="pillar">
+                <div class="pillar-icon pillar-icon--green"><i data-lucide="eye"></i></div>
+                <div>
+                  <h4>Visión</h4>
+                  <p>Ser empresa líder y referente en el mercado, cumpliendo valores empresariales con responsabilidad social.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-tags">
+              <span class="atag"><i data-lucide="check"></i> ISO Estándares</span>
+              <span class="atag"><i data-lucide="check"></i> Acreditación MRL</span>
+              <span class="atag"><i data-lucide="check"></i> Resultados medibles</span>
+              <span class="atag"><i data-lucide="check"></i> +100 empresas</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICIOS
+    ============================================================ -->
+    <section class="services" id="servicios">
+      <div class="services-bg-shape"></div>
+      <div class="container">
+
+        <div class="section-header" data-aos>
+          <span class="section-chip">Lo que hacemos</span>
+          <h2 class="section-title">Soluciones <em>integrales</em><br/>para tu organización</h2>
+          <p class="section-desc">Diseñadas para elevar el desempeño, la seguridad y la competitividad empresarial.</p>
+        </div>
+
+        <div class="services-grid">
+
+          <article class="scard" data-aos data-aos-delay="0">
+            <div class="scard-top">
+              <div class="scard-icon scard-icon--blue"><i data-lucide="graduation-cap"></i></div>
+              <div class="scard-num">01</div>
+            </div>
+            <h3>Capacitación</h3>
+            <p>Programas formativos de alto impacto adaptados a cada sector con metodologías de vanguardia.</p>
+            <a href="#capacitacion" class="scard-link"><span>Explorar</span><i data-lucide="arrow-right"></i></a>
+          </article>
+
+          <article class="scard" data-aos data-aos-delay="60">
+            <div class="scard-top">
+              <div class="scard-icon scard-icon--green"><i data-lucide="badge-check"></i></div>
+              <div class="scard-num">02</div>
+            </div>
+            <h3>Certificación Profesional</h3>
+            <p>Acreditación nacional que valida competencias con los más altos estándares del mercado.</p>
+            <a href="#contacto" class="scard-link"><span>Explorar</span><i data-lucide="arrow-right"></i></a>
+          </article>
+
+          <article class="scard scard--accent" data-aos data-aos-delay="120">
+            <div class="scard-top">
+              <div class="scard-icon scard-icon--yellow"><i data-lucide="scan-eye"></i></div>
+              <div class="scard-num">03</div>
+            </div>
+            <h3>Medición de Riesgos Laborales</h3>
+            <p>Evaluación exhaustiva de factores de riesgo mecánico, físico, químico, biológico, ergonómico y psicosocial.</p>
+            <a href="#capacitacion" class="scard-link"><span>Explorar</span><i data-lucide="arrow-right"></i></a>
+          </article>
+
+          <article class="scard" data-aos data-aos-delay="0">
+            <div class="scard-top">
+              <div class="scard-icon scard-icon--blue"><i data-lucide="shield"></i></div>
+              <div class="scard-num">04</div>
+            </div>
+            <h3>Consultoría SST</h3>
+            <p>Asesoramiento estratégico para implementar sistemas que protejan colaboradores y cumplan normativas.</p>
+            <a href="#seguridad" class="scard-link"><span>Explorar</span><i data-lucide="arrow-right"></i></a>
+          </article>
+
+          <article class="scard" data-aos data-aos-delay="60">
+            <div class="scard-top">
+              <div class="scard-icon scard-icon--green"><i data-lucide="clipboard-check"></i></div>
+              <div class="scard-num">05</div>
+            </div>
+            <h3>Fiscalización</h3>
+            <p>Supervisión técnica y control de obras y procesos industriales con normativas nacionales e internacionales.</p>
+            <a href="#seguridad" class="scard-link"><span>Explorar</span><i data-lucide="arrow-right"></i></a>
+          </article>
+
+          <article class="scard" data-aos data-aos-delay="120">
+            <div class="scard-top">
+              <div class="scard-icon scard-icon--yellow"><i data-lucide="heart-pulse"></i></div>
+              <div class="scard-num">06</div>
+            </div>
+            <h3>Salud Ocupacional</h3>
+            <p>Reconocimientos médicos, certificados de aptitud y campañas de prevención psicosocial.</p>
+            <a href="#seguridad" class="scard-link"><span>Explorar</span><i data-lucide="arrow-right"></i></a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CAPACITACIÓN — FACTORES DE RIESGO
+    ============================================================ -->
+    <section class="training" id="capacitacion">
+      <div class="container">
+
+        <div class="training-layout">
+          <div class="training-header" data-aos>
+            <span class="section-chip section-chip--dark">Metodología</span>
+            <h2 class="section-title section-title--light">Los 6 factores<br/><em>de riesgo laboral</em></h2>
+            <p class="section-desc section-desc--light">Evaluamos con protocolos técnicos de precisión para proteger a tu equipo.</p>
+          </div>
+
+          <div class="risk-grid">
+            <div class="rcard" data-aos data-aos-delay="0">
+              <div class="rcard-num">01</div>
+              <div class="rcard-icon"><i data-lucide="cog"></i></div>
+              <h4>Mecánico</h4>
+              <p>Maquinaria, equipos y superficies de trabajo con riesgo de accidentes.</p>
+            </div>
+            <div class="rcard" data-aos data-aos-delay="50">
+              <div class="rcard-num">02</div>
+              <div class="rcard-icon"><i data-lucide="zap"></i></div>
+              <h4>Físico</h4>
+              <p>Ruido, vibraciones, temperatura, iluminación y radiaciones laborales.</p>
+            </div>
+            <div class="rcard" data-aos data-aos-delay="100">
+              <div class="rcard-num">03</div>
+              <div class="rcard-icon"><i data-lucide="flask-conical"></i></div>
+              <h4>Químico</h4>
+              <p>Sustancias peligrosas, vapores, gases y polvos industriales.</p>
+            </div>
+            <div class="rcard" data-aos data-aos-delay="150">
+              <div class="rcard-num">04</div>
+              <div class="rcard-icon"><i data-lucide="microscope"></i></div>
+              <h4>Biológico</h4>
+              <p>Protocolos frente a agentes infecciosos y exposición orgánica.</p>
+            </div>
+            <div class="rcard" data-aos data-aos-delay="200">
+              <div class="rcard-num">05</div>
+              <div class="rcard-icon"><i data-lucide="user-round"></i></div>
+              <h4>Ergonómico</h4>
+              <p>Evaluación postural y movimientos repetitivos para prevenir lesiones.</p>
+            </div>
+            <div class="rcard" data-aos data-aos-delay="250">
+              <div class="rcard-num">06</div>
+              <div class="rcard-icon"><i data-lucide="brain"></i></div>
+              <h4>Psicosocial</h4>
+              <p>Estrés laboral, burnout y factores de bienestar mental organizacional.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEGURIDAD — TABS
+    ============================================================ -->
+    <section class="safety" id="seguridad">
+      <div class="container">
+
+        <div class="section-header" data-aos>
+          <span class="section-chip">Especialización</span>
+          <h2 class="section-title">Seguridad &amp; Salud<br/><em>Ocupacional</em></h2>
+          <p class="section-desc">Cuatro pilares que garantizan entornos seguros, productivos y sostenibles.</p>
+        </div>
+
+        <div class="tabs-modern" data-aos>
+          <div class="tab-nav" role="tablist">
+            <button class="tbn tbn--active" data-tab="seguridad" role="tab" aria-selected="true">
+              <i data-lucide="hard-hat"></i><span>Seguridad</span>
+            </button>
+            <button class="tbn" data-tab="gestion" role="tab" aria-selected="false">
+              <i data-lucide="settings-2"></i><span>Gestión</span>
+            </button>
+            <button class="tbn" data-tab="ambiente" role="tab" aria-selected="false">
+              <i data-lucide="trees"></i><span>Ambiente</span>
+            </button>
+            <button class="tbn" data-tab="salud" role="tab" aria-selected="false">
+              <i data-lucide="stethoscope"></i><span>Salud</span>
+            </button>
+            <div class="tab-slider" id="tabSlider"></div>
+          </div>
+
+          <div class="tab-content">
+            <div class="tab-pane tab-pane--active" id="pane-seguridad">
+              <div class="tab-pane-header">
+                <div class="tph-icon"><i data-lucide="hard-hat"></i></div>
+                <div>
+                  <h3>Seguridad en el Trabajo</h3>
+                  <p>Control integral de procesos y entornos de alto riesgo.</p>
+                </div>
+              </div>
+              <ul class="check-list">
+                <li><i data-lucide="check-circle-2"></i>Revisión y aprobación del plan de seguridad</li>
+                <li><i data-lucide="check-circle-2"></i>Análisis de riesgos en obra</li>
+                <li><i data-lucide="check-circle-2"></i>Seguimiento de medidas de control</li>
+                <li><i data-lucide="check-circle-2"></i>Inspecciones en trabajos de alto riesgo</li>
+                <li><i data-lucide="check-circle-2"></i>Coordinación de obra y control de acceso</li>
+                <li><i data-lucide="check-circle-2"></i>Informe mensual y libro de obra</li>
+              </ul>
+            </div>
+            <div class="tab-pane" id="pane-gestion">
+              <div class="tab-pane-header">
+                <div class="tph-icon"><i data-lucide="settings-2"></i></div>
+                <div>
+                  <h3>Gestión y Control</h3>
+                  <p>Sistemas de gestión para procesos seguros y eficientes.</p>
+                </div>
+              </div>
+              <ul class="check-list">
+                <li><i data-lucide="check-circle-2"></i>Verificación de liberación de máquinas</li>
+                <li><i data-lucide="check-circle-2"></i>Control del sistema de permisos de trabajo</li>
+                <li><i data-lucide="check-circle-2"></i>Control de productos químicos</li>
+                <li><i data-lucide="check-circle-2"></i>Análisis del sistema de gestión</li>
+                <li><i data-lucide="check-circle-2"></i>Planes integrales de acción</li>
+                <li><i data-lucide="check-circle-2"></i>Seguimiento de indicadores de seguridad</li>
+              </ul>
+            </div>
+            <div class="tab-pane" id="pane-ambiente">
+              <div class="tab-pane-header">
+                <div class="tph-icon"><i data-lucide="trees"></i></div>
+                <div>
+                  <h3>Gestión Ambiental</h3>
+                  <p>Operaciones responsables con el entorno y la comunidad.</p>
+                </div>
+              </div>
+              <ul class="check-list">
+                <li><i data-lucide="check-circle-2"></i>Seguimiento del plan de manejo ambiental</li>
+                <li><i data-lucide="check-circle-2"></i>Verificación de disposición de residuos</li>
+                <li><i data-lucide="check-circle-2"></i>Control de impactos ambientales</li>
+                <li><i data-lucide="check-circle-2"></i>Revisión de permisos ambientales</li>
+              </ul>
+            </div>
+            <div class="tab-pane" id="pane-salud">
+              <div class="tab-pane-header">
+                <div class="tph-icon"><i data-lucide="stethoscope"></i></div>
+                <div>
+                  <h3>Salud Ocupacional</h3>
+                  <p>Bienestar integral del talento humano como ventaja competitiva.</p>
+                </div>
+              </div>
+              <ul class="check-list">
+                <li><i data-lucide="check-circle-2"></i>Certificación del programa Actívate y Vive</li>
+                <li><i data-lucide="check-circle-2"></i>Reconocimientos médicos y aptitud laboral</li>
+                <li><i data-lucide="check-circle-2"></i>Pausas activas y gestión de botiquines</li>
+                <li><i data-lucide="check-circle-2"></i>Campañas de salud preventiva</li>
+                <li><i data-lucide="check-circle-2"></i>Prevención psicosocial, drogas y VIH</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PRICING / PROPUESTA DE VALOR
+    ============================================================ -->
+    <section class="pricing" id="propuesta">
+      <div class="pricing-bg"></div>
+      <div class="container">
+
+        <div class="section-header" data-aos>
+          <span class="section-chip">Planes &amp; Propuesta</span>
+          <h2 class="section-title">Elige el plan<br/><em>ideal para tu empresa</em></h2>
+          <p class="section-desc">Adaptamos cada propuesta a las necesidades específicas de tu organización.</p>
+        </div>
+
+        <div class="pricing-grid">
+
+          <div class="pcard" data-aos data-aos-delay="0">
+            <div class="pcard-tag">Diagnóstico</div>
+            <div class="pcard-price">
+              <span class="pcard-from">desde</span>
+              <span class="pcard-amount">Consultar</span>
+            </div>
+            <p class="pcard-desc">Ideal para empresas que buscan identificar sus brechas y áreas de mejora.</p>
+            <ul class="pcard-features">
+              <li><i data-lucide="check"></i>Diagnóstico organizacional</li>
+              <li><i data-lucide="check"></i>Evaluación de riesgos básica</li>
+              <li><i data-lucide="check"></i>Informe de resultados</li>
+              <li><i data-lucide="check"></i>Plan de acción recomendado</li>
+            </ul>
+            <a href="#contacto" class="pcard-btn pcard-btn--outline">Solicitar info</a>
+          </div>
+
+          <div class="pcard pcard--featured" data-aos data-aos-delay="80">
+            <div class="pcard-popular">Más elegido</div>
+            <div class="pcard-tag">Capacitación Integral</div>
+            <div class="pcard-price">
+              <span class="pcard-from">propuesta</span>
+              <span class="pcard-amount">A medida</span>
+            </div>
+            <p class="pcard-desc">Para organizaciones que requieren formación completa de su equipo con certificación.</p>
+            <ul class="pcard-features">
+              <li><i data-lucide="check"></i>Programas personalizados</li>
+              <li><i data-lucide="check"></i>Facilitadores certificados</li>
+              <li><i data-lucide="check"></i>Certificación profesional</li>
+              <li><i data-lucide="check"></i>Evaluación de impacto</li>
+              <li><i data-lucide="check"></i>Seguimiento post-capacitación</li>
+              <li><i data-lucide="check"></i>Soporte continuo</li>
+            </ul>
+            <a href="#contacto" class="pcard-btn pcard-btn--primary">Solicitar propuesta</a>
+          </div>
+
+          <div class="pcard" data-aos data-aos-delay="160">
+            <div class="pcard-tag">Consultoría SST</div>
+            <div class="pcard-price">
+              <span class="pcard-from">servicio</span>
+              <span class="pcard-amount">Anual</span>
+            </div>
+            <p class="pcard-desc">Gestión completa de seguridad, salud y ambiente para empresas con operaciones complejas.</p>
+            <ul class="pcard-features">
+              <li><i data-lucide="check"></i>Fiscalización mensual</li>
+              <li><i data-lucide="check"></i>Gestión ambiental</li>
+              <li><i data-lucide="check"></i>Salud ocupacional</li>
+              <li><i data-lucide="check"></i>Reportes ejecutivos</li>
+              <li><i data-lucide="check"></i>Asesoría legal SST</li>
+            </ul>
+            <a href="#contacto" class="pcard-btn pcard-btn--outline">Solicitar info</a>
+          </div>
+
+        </div>
+
+        <div class="pricing-cta" data-aos>
+          <p>¿Necesitas una propuesta completamente personalizada?</p>
+          <a href="#contacto" class="btn-cta-inline">
+            <i data-lucide="message-circle"></i>
+            Hablemos de tu caso
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CLIENTES + TESTIMONIOS
+    ============================================================ -->
+    <section class="clients" id="clientes">
+      <div class="container">
+
+        <div class="section-header" data-aos>
+          <span class="section-chip">Confianza</span>
+          <h2 class="section-title">Empresas que ya<br/><em>transformaron</em> su cultura</h2>
+        </div>
+
+        <!-- Logos carousel -->
+        <div class="logos-track-wrap" data-aos>
+          <div class="logos-track" id="logosTrack">
+            <div class="logos-row">
+              <div class="logo-pill">Colombina</div>
+              <div class="logo-pill">Constructora Andina</div>
+              <div class="logo-pill">Metalmecánicas EC</div>
+              <div class="logo-pill">Pharmabrand</div>
+              <div class="logo-pill">Agropecuaria Sur</div>
+              <div class="logo-pill">Textiles del Centro</div>
+              <div class="logo-pill">Grupo Industrial</div>
+              <div class="logo-pill">Distribuidora Norte</div>
+            </div>
+            <div class="logos-row" aria-hidden="true">
+              <div class="logo-pill">Colombina</div>
+              <div class="logo-pill">Constructora Andina</div>
+              <div class="logo-pill">Metalmecánicas EC</div>
+              <div class="logo-pill">Pharmabrand</div>
+              <div class="logo-pill">Agropecuaria Sur</div>
+              <div class="logo-pill">Textiles del Centro</div>
+              <div class="logo-pill">Grupo Industrial</div>
+              <div class="logo-pill">Distribuidora Norte</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonios -->
+        <div class="testimonials" data-aos>
+          <div class="tcard tcard--large">
+            <div class="tcard-quote">"</div>
+            <blockquote>Gestión Integral transformó por completo nuestra cultura de seguridad. Los resultados fueron visibles desde el primer mes: cero accidentes y un equipo mucho más comprometido con su bienestar.</blockquote>
+            <footer>
+              <div class="tcard-avatar">RM</div>
+              <div>
+                <strong>Ricardo Morales</strong>
+                <span>Gerente de Operaciones · Industria Metalmecánica</span>
+              </div>
+              <div class="tcard-stars">★★★★★</div>
+            </footer>
+          </div>
+
+          <div class="tcard">
+            <div class="tcard-quote">"</div>
+            <blockquote>La capacitación en riesgos psicosociales fue reveladora. Ahora tenemos herramientas concretas para apoyar al personal.</blockquote>
+            <footer>
+              <div class="tcard-avatar" style="background:linear-gradient(135deg,#F4BE1F,#d6a400);color:#1a1a1a">AL</div>
+              <div>
+                <strong>Andrea López</strong>
+                <span>RRHH · Empresa Distribuidora</span>
+              </div>
+            </footer>
+          </div>
+
+          <div class="tcard tcard--metric">
+            <div class="tmetric-num">100%</div>
+            <p>de empresas recomendarían<br/>nuestros servicios</p>
+            <div class="tmetric-stars">★★★★★</div>
+          </div>
+
+          <div class="tcard">
+            <div class="tcard-quote">"</div>
+            <blockquote>Su equipo de consultores es altamente profesional. Nos ayudaron a obtener la certificación en tiempo récord.</blockquote>
+            <footer>
+              <div class="tcard-avatar" style="background:linear-gradient(135deg,#01485B,#025f75)">JP</div>
+              <div>
+                <strong>Juan Páez</strong>
+                <span>Director · Constructora Andina</span>
+              </div>
+            </footer>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACTO
+    ============================================================ -->
+    <section class="contact" id="contacto">
+      <div class="container">
+        <div class="contact-layout">
+
+          <div class="contact-left" data-aos>
+            <span class="section-chip section-chip--dark">Contacto</span>
+            <h2 class="section-title section-title--light">Trabajemos<br/><em>juntos</em></h2>
+            <p class="contact-desc">Estamos listos para llevar su organización a un nuevo nivel. Escríbanos o llámenos.</p>
+
+            <div class="contact-items">
+              <a href="tel:+593980884979" class="citem">
+                <div class="citem-icon"><i data-lucide="phone"></i></div>
+                <div>
+                  <span class="citem-label">Llamar ahora</span>
+                  <span class="citem-value">0980 884 979</span>
+                </div>
+                <i data-lucide="arrow-right" class="citem-arrow"></i>
+              </a>
+              <a href="https://wa.me/593980884979" target="_blank" class="citem">
+                <div class="citem-icon citem-icon--green"><i data-lucide="message-circle"></i></div>
+                <div>
+                  <span class="citem-label">WhatsApp</span>
+                  <span class="citem-value">Respuesta inmediata</span>
+                </div>
+                <i data-lucide="arrow-right" class="citem-arrow"></i>
+              </a>
+              <div class="citem">
+                <div class="citem-icon"><i data-lucide="map-pin"></i></div>
+                <div>
+                  <span class="citem-label">Oficina</span>
+                  <span class="citem-value">Marcos Montalvo e Isaías Sánchez, Ambato</span>
+                </div>
+              </div>
+              <a href="mailto:info@gestionintegral.com.ec" class="citem">
+                <div class="citem-icon"><i data-lucide="mail"></i></div>
+                <div>
+                  <span class="citem-label">Email</span>
+                  <span class="citem-value">info@gestionintegral.com.ec</span>
+                </div>
+                <i data-lucide="arrow-right" class="citem-arrow"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-right" data-aos data-aos-delay="100">
+            <div class="contact-form-card">
+              <h3>Envíanos un mensaje</h3>
+              <p>Te respondemos en menos de 24 horas</p>
+              <form id="contactForm" novalidate>
+                <div class="form-row">
+                  <div class="fgroup">
+                    <label for="nombre">Nombre <span>*</span></label>
+                    <input type="text" id="nombre" name="nombre" placeholder="María García" required autocomplete="name"/>
+                    <span class="ferror"></span>
+                  </div>
+                  <div class="fgroup">
+                    <label for="empresa">Empresa</label>
+                    <input type="text" id="empresa" name="empresa" placeholder="Industrias XYZ" autocomplete="organization"/>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="fgroup">
+                    <label for="correo">Correo <span>*</span></label>
+                    <input type="email" id="correo" name="correo" placeholder="correo@empresa.com" required autocomplete="email"/>
+                    <span class="ferror"></span>
+                  </div>
+                  <div class="fgroup">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="09XX XXX XXX" autocomplete="tel"/>
+                  </div>
+                </div>
+                <div class="fgroup">
+                  <label for="servicio">Servicio de interés</label>
+                  <select id="servicio" name="servicio">
+                    <option value="">Seleccionar servicio...</option>
+                    <option>Capacitación empresarial</option>
+                    <option>Certificación profesional</option>
+                    <option>Medición de riesgos</option>
+                    <option>Consultoría SST</option>
+                    <option>Fiscalización</option>
+                    <option>Salud ocupacional</option>
+                    <option>Gestión ambiental</option>
+                  </select>
+                </div>
+                <div class="fgroup">
+                  <label for="mensaje">Mensaje <span>*</span></label>
+                  <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntenos sobre su organización..." required></textarea>
+                  <span class="ferror"></span>
+                </div>
+                <button type="submit" class="form-submit" id="submitBtn">
+                  <span>Enviar mensaje</span>
+                  <i data-lucide="send"></i>
+                  <div class="btn-loader"></div>
+                </button>
+                <p class="form-notice" id="formNotice"></p>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="map-embed">
+        <iframe title="Ubicación Gestión Integral Ambato"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.2999!2d-78.6234!3d-1.2490!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTQnNTYuNCJTIDc4wrAzNyc0NC40Ilc!5e0!3m2!1ses!2sec!4v1234567890"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <a href="#inicio" class="footer-logo-link">
+          <span class="footer-logo-mark">GI</span>
+          <span class="footer-logo-text">Gestión<strong>Integral</strong></span>
+        </a>
+        <p>14 años transformando organizaciones con capacitación y consultoría de clase mundial.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+          <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+        </div>
+      </div>
+
+      <nav class="footer-nav">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="#quienes-somos">Quiénes Somos</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#capacitacion">Capacitación</a></li>
+          <li><a href="#clientes">Clientes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="#servicios">Capacitación</a></li>
+          <li><a href="#servicios">Certificación</a></li>
+          <li><a href="#servicios">Riesgos Laborales</a></li>
+          <li><a href="#servicios">Consultoría SST</a></li>
+          <li><a href="#servicios">Fiscalización</a></li>
+          <li><a href="#servicios">Salud Ocupacional</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact-col">
+        <h5>Contacto</h5>
+        <ul>
+          <li><i data-lucide="map-pin"></i>Marcos Montalvo e Isaías Sánchez, Ambato</li>
+          <li><i data-lucide="phone"></i><a href="tel:+593980884979">0980 884 979</a></li>
+          <li><i data-lucide="phone"></i><a href="tel:+593992565242">0992 565 242</a></li>
+          <li><i data-lucide="mail"></i><a href="mailto:info@gestionintegral.com.ec">info@gestionintegral.com.ec</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; <span id="currentYear"></span> Gestión Integral Cía. Ltda. · Todos los derechos reservados.</p>
+        <p>Ambato, Ecuador · RUC: 1891XXXXXXXX001</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/593980884979?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios"
+    class="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    <span class="wa-tooltip">¡Escríbenos!</span>
+    <div class="wa-ring"></div>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
