@@ -1,9 +1,10 @@
-
 'use strict';
 
+
 /* ============================================================
-   1. HELPERS
-   ============================================================ */
+1. HELPERS
+============================================================ */
+emailjs.init("W5KSiPLeGAkSIH5Bl");
 const $ = (sel, ctx = document) => ctx.querySelector(sel);
 const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
@@ -290,7 +291,13 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
     try {
       // Simulación de envío (reemplazar con tu endpoint real)
-      await new Promise(resolve => setTimeout(resolve, 1800));
+      await emailjs.send("service_eabqknh", "TU_TEMPLATE_ID", {
+        nombre: form.querySelector('[name="nombre"]').value,
+        empresa: form.querySelector('[name="empresa"]').value,
+        correo: form.querySelector('[name="correo"]').value,
+        telefono: form.querySelector('[name="telefono"]').value,
+        mensaje: form.querySelector('[name="mensaje"]').value
+      });
 
       // Éxito
       notice.textContent = '¡Mensaje enviado! Nos pondremos en contacto pronto.';
@@ -337,7 +344,7 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 })();
 
 /* ============================================================
-   12. FIX CRÍTICO: Inicializar Lucide Icons
+  12. FIX CRÍTICO: Inicializar Lucide Icons
    ============================================================ */
 (function initLucide() {
   if (typeof lucide !== 'undefined') {
@@ -350,6 +357,9 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
   }
 })();
 
+/* ============================================================
+  13. ANIMACIÓN DE CARRUSEL — sin salto al reiniciar
+   ============================================================ */
 
 const track = document.getElementById("carouselTrack");
 
@@ -369,3 +379,95 @@ function animate() {
 }
 
 animate();
+
+/* ============================================================
+  14. GALERÍA — efecto hover en móviles (toque) y desktop
+   ============================================================ */
+(function () {
+  const items = Array.from(document.querySelectorAll(".gallery-item"));
+  const backdrop = document.getElementById("modalBackdrop");
+  const mediaEl = document.getElementById("modalMedia");
+  const counter = document.getElementById("modalCounter");
+  let current = 0;
+
+  /* Autoplay de videos con IntersectionObserver */
+  const observer = new IntersectionObserver(
+    (entries) => entries.forEach(e => {
+      const v = e.target.querySelector("video");
+      if (!v) return;
+      e.isIntersecting ? v.play() : v.pause();
+    }),
+    { threshold: 0.3 }
+  );
+  items.forEach(item => observer.observe(item));
+
+  /* Abrir modal */
+  function openModal(idx) {
+    current = idx;
+    renderMedia(current);
+    backdrop.style.display = "flex";
+    document.body.style.overflow = "hidden";
+    document.getElementById("modalClose").focus();
+  }
+
+  /* Renderizar media en el modal */
+  function renderMedia(idx) {
+    const item = items[idx];
+    const type = item.dataset.type;
+    counter.textContent = `${idx + 1} / ${items.length}`;
+
+    if (type === "video") {
+      const src = item.querySelector("video").src;
+      mediaEl.innerHTML = `<video src="${src}" controls autoplay></video>`;
+    } else {
+      const img = item.querySelector("img");
+      mediaEl.innerHTML = `<img src="${img.src}" alt="${img.alt}">`;
+    }
+  }
+
+  /* Cerrar modal */
+  function closeModal() {
+    const v = mediaEl.querySelector("video");
+    if (v) v.pause();
+    backdrop.style.display = "none";
+    document.body.style.overflow = "";
+    items[current].focus();
+  }
+
+  /* Eventos de items */
+  items.forEach((item, i) => {
+    item.addEventListener("click", () => openModal(i));
+    item.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openModal(i);
+      }
+    });
+  });
+
+  /* Controles del modal */
+  document.getElementById("modalClose").addEventListener("click", closeModal);
+
+  document.getElementById("modalPrev").addEventListener("click", () => {
+    current = (current - 1 + items.length) % items.length;
+    renderMedia(current);
+  });
+
+  document.getElementById("modalNext").addEventListener("click", () => {
+    current = (current + 1) % items.length;
+    renderMedia(current);
+  });
+
+  /* Cierre al hacer clic fuera */
+  backdrop.addEventListener("click", (e) => {
+    if (e.target === backdrop) closeModal();
+  });
+
+  /* Navegación con teclado */
+  document.addEventListener("keydown", (e) => {
+    if (backdrop.style.display === "none") return;
+    if (e.key === "Escape") closeModal();
+    if (e.key === "ArrowLeft") { current = (current - 1 + items.length) % items.length; renderMedia(current); }
+    if (e.key === "ArrowRight") { current = (current + 1) % items.length; renderMedia(current); }
+  });
+})();
