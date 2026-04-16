@@ -129,7 +129,7 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
   const el = $('#dynamicText');
   if (!el) return;
 
-  const words = ['estrategias', 'capacitación', 'consultoría', 'resultados', 'seguridad'];
+  const words = ['seguridad', 'salud', 'sostenibilidad', 'calidad'];
   let wordIndex = 0;
   let charIndex = 0;
   let deleting = false;
@@ -233,82 +233,6 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
     track.style.animationPlayState = 'running';
   }, { passive: true });
 })();
-
-/* ============================================================
-   9. FORMULARIO DE CONTACTO
-   ============================================================ */
-(function initContactForm() {
-  const form = $('#contactForm');
-  if (!form) return;
-
-  const submitBtn = $('#submitBtn');
-  const notice = $('#formNotice');
-
-  // Validación individual de campo
-  function validateField(input) {
-    const group = input.closest('.form-group');
-    const error = group ? group.querySelector('.form-error') : null;
-    let msg = '';
-
-    if (input.required && !input.value.trim()) {
-      msg = 'Este campo es obligatorio.';
-    } else if (input.type === 'email' && input.value.trim()) {
-      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRe.test(input.value.trim())) msg = 'Ingresa un correo válido.';
-    } else if (input.type === 'tel' && input.value.trim()) {
-      const telRe = /^[\d\s\+\-\(\)]{7,15}$/;
-      if (!telRe.test(input.value.trim())) msg = 'Ingresa un teléfono válido.';
-    }
-
-    if (error) error.textContent = msg;
-    input.classList.toggle('error', !!msg);
-    input.classList.toggle('valid', !msg && !!input.value.trim());
-    return !msg;
-  }
-
-  // Validar al perder el foco
-  $$('input, textarea', form).forEach(input => {
-    input.addEventListener('blur', () => validateField(input));
-    input.addEventListener('input', () => {
-      if (input.classList.contains('error')) validateField(input);
-    });
-  });
-
-  // Envío
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const fields = $$('input[required], textarea[required]', form);
-    const valid = fields.map(f => validateField(f)).every(Boolean);
-    if (!valid) return;
-
-    // Estado loading
-    submitBtn.classList.add('btn--loading');
-    submitBtn.disabled = true;
-    notice.className = 'form-notice';
-    notice.textContent = '';
-
-    try {
-      // Simulación de envío (reemplazar con tu endpoint real)
-      await new Promise(resolve => setTimeout(resolve, 1800));
-
-      // Éxito
-      notice.textContent = '¡Mensaje enviado! Nos pondremos en contacto pronto.';
-      notice.classList.add('success');
-      form.reset();
-      $$('input, textarea', form).forEach(f => f.classList.remove('valid', 'error'));
-
-    } catch {
-      notice.textContent = 'Ocurrió un error. Por favor, inténtalo de nuevo.';
-      notice.classList.add('error-msg');
-    } finally {
-      // FIX: siempre re-habilitar el botón
-      submitBtn.classList.remove('btn--loading');
-      submitBtn.disabled = false;
-    }
-  });
-})();
-
 /* ============================================================
    10. AÑO ACTUAL EN FOOTER
    ============================================================ */
@@ -354,24 +278,46 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
   13. ANIMACIÓN DE CARRUSEL — sin salto al reiniciar
    ============================================================ */
 
-const track = document.getElementById("carouselTrack");
+/* ============================================================
+  13. CARRUSEL JS — duplicación + animación sin conflicto CSS
+   ============================================================ */
+(function initCarouselJS() {
+  const track = document.getElementById('carouselTrack');
+  if (!track) return;
 
-let position = 0;
-const speed = 0.3; // velocidad (puedes ajustar)
+  // Duplicar los items para que el loop sea infinito y sin salto
+  const clones = Array.from(track.children).map(el => el.cloneNode(true));
+  clones.forEach(clone => track.appendChild(clone));
 
-function animate() {
-  position -= speed;
+  let position = 0;
+  const speed = 0.4;
+  let paused = false;
+  let rafId;
 
-  // cuando llega a la mitad, reinicia sin salto
-  if (Math.abs(position) >= track.scrollWidth / 2) {
-    position = 0;
+  function step() {
+    if (!paused) {
+      position -= speed;
+      // Reiniciar cuando llega exactamente a la mitad (los originales)
+      const half = track.scrollWidth / 2;
+      if (Math.abs(position) >= half) {
+        position = 0;
+      }
+      track.style.transform = `translateX(${position}px)`;
+    }
+    rafId = requestAnimationFrame(step);
   }
 
-  track.style.transform = `translateX(${position}px)`;
-  requestAnimationFrame(animate);
-}
+  // Esperar a que las imágenes carguen para que scrollWidth sea correcto
+  window.addEventListener('load', () => {
+    rafId = requestAnimationFrame(step);
+  });
 
-animate();
+  // Pausar en hover (desktop) y touch (móvil)
+  track.addEventListener('mouseenter', () => { paused = true; });
+  track.addEventListener('mouseleave', () => { paused = false; });
+  track.addEventListener('touchstart', () => { paused = true; }, { passive: true });
+  track.addEventListener('touchend', () => { paused = false; }, { passive: true });
+})();
 
 /* ============================================================
   14. GALERÍA — efecto hover en móviles (toque) y desktop
@@ -462,5 +408,173 @@ animate();
     if (e.key === "Escape") closeModal();
     if (e.key === "ArrowLeft") { current = (current - 1 + items.length) % items.length; renderMedia(current); }
     if (e.key === "ArrowRight") { current = (current + 1) % items.length; renderMedia(current); }
+  });
+})();
+
+/* ============================================================
+  15. SERVICIOS MODAL
+   ============================================================ */
+
+const PROGRAMS = [
+  "Legislación y normativa ambiental",
+  "Auditoría interna de calidad ISO 9001:2015",
+  "Auditoría interna ISO 45001:2018",
+  "Auditoría interna ISO 14001:2015",
+  "Auditoría interna sistemas integrados de gestión ISO 9001, 45001, 14001",
+  "Buenas prácticas de manufactura en la industria alimentaria",
+  "Evaluación de impacto ambiental",
+  "Plan de manejo ambiental",
+  "Prevención y manejo de desechos",
+  "Acoso laboral / Mobbing laboral",
+  "Brigadas de emergencia",
+  "Reglamento de seguridad y salud organismos paritarios",
+  "Fundamentos de la seguridad y salud en el trabajo",
+  "Prevención de riesgos físicos",
+  "Prevención de riesgos químicos",
+  "Metodología de evaluación de riesgos laborales legislación y normativa de seguridad y salud ocupacional",
+  "Plan de emergencias y autoprotección",
+  "Programa de prevención integral al uso y consumo de drogas en los espacios laborales públicos y privados",
+  "Metodología de evaluación de riesgos psicosociales",
+  "Prevención de riesgos eléctricos",
+  "Prevención de riesgos psicosociales",
+  "Prevención de riesgos en el manejo de productos químicos",
+  "Prevención de riesgos mecánicos",
+  "Prevención de riesgos en la construcción",
+  "Manejo seguro de montacargas",
+  "Prevención en el manejo de vehículos livianos",
+  "Prevención de trabajos en alturas",
+  "Seguridad física para los guardias",
+  "Sistema de gestión de seguridad y salud laboral",
+];
+
+const VISIBLE = 10;
+
+const arrowSVG = `<svg class="program-item__arrow" viewBox="0 0 16 16" fill="none">
+  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+  stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+
+function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+// IMPORTANTE: esperar a que cargue el DOM
+document.addEventListener('DOMContentLoaded', () => {
+
+  const vGrid = document.getElementById('programs-visible');
+
+  PROGRAMS.slice(0, VISIBLE).forEach((s, i) => {
+    const el = document.createElement('div');
+    el.className = 'program-item';
+    el.innerHTML = `
+      <span class="program-item__num">${pad(i + 1)}</span>
+      <span class="program-item__name">${s}</span>
+      ${arrowSVG}
+    `;
+    vGrid.appendChild(el);
+  });
+
+  document.getElementById('programs-total').textContent = PROGRAMS.length;
+
+  const mGrid = document.getElementById('programs-modal-list');
+
+  PROGRAMS.forEach((s, i) => {
+    const el = document.createElement('div');
+    el.className = 'program-item program-item--modal';
+    el.innerHTML = `
+      <span class="program-item__num">${pad(i + 1)}</span>
+      <span class="program-item__name">${s}</span>
+    `;
+    mGrid.appendChild(el);
+  });
+
+  document.getElementById('programs-modal-sub').textContent =
+    PROGRAMS.length + ' programas disponibles';
+
+  document.getElementById('programs-overlay').addEventListener('click', function (e) {
+    if (e.target === this) closeProgramsModal();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeProgramsModal();
+  });
+
+});
+
+// Funciones globales (para que funcionen los onclick del HTML)
+function openProgramsModal() {
+  document.getElementById('programs-overlay').classList.add('programs-modal-overlay--open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProgramsModal() {
+  document.getElementById('programs-overlay').classList.remove('programs-modal-overlay--open');
+  document.body.style.overflow = '';
+}
+
+/* ============================================================
+  16. Zoom en certificados
+   ============================================================ */
+(function initCertModal() {
+  const card = document.getElementById('certCard');
+  const modal = document.getElementById('certModal2');
+  const modalImg = document.getElementById('certModalImg2');
+  const closeBtn = document.getElementById('certClose2');
+
+  if (!card || !modal || !modalImg || !closeBtn) {
+    console.warn('certModal: elemento no encontrado', {card, modal, modalImg, closeBtn});
+    return;
+  }
+
+  function open() {
+    const img = card.querySelector('img');
+    if (!img) return;
+    modalImg.src = img.src;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  card.addEventListener('click', open);
+  closeBtn.addEventListener('click', close);(function initCertModal() {
+  const card = document.getElementById('certCard');
+  const modal = document.getElementById('certModal2');
+  const modalImg = document.getElementById('certModalImg2');
+  const closeBtn = document.getElementById('certClose2');
+
+  if (!card || !modal || !modalImg || !closeBtn) {
+    console.warn('certModal: elemento no encontrado', {card, modal, modalImg, closeBtn});
+    return;
+  }
+
+  function open() {
+    const img = card.querySelector('img');
+    if (!img) return;
+    modalImg.src = img.src;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  card.addEventListener('click', open);
+  closeBtn.addEventListener('click', close);
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) close();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.style.display === 'flex') close();
+  });
+})();
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) close();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.style.display === 'flex') close();
   });
 })();
